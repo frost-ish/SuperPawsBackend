@@ -8,7 +8,7 @@ const createShelter = async (req, res) => {
         return
     }
 
-    if(req.body.address == null || req.body.name == null || req.body.dogCount == null) {
+    if(req.body.address == null || req.body.name == null || req.body.petCount == null) {
         res.status(400).json({"reason": "The fields name, address, and dogCount are either null, or invalid"})
         return
     }

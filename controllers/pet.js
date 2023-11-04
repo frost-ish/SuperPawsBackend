@@ -2,6 +2,7 @@ const Pet = require("../models/pet")
 const Breed = require("../models/breed")
 const Shelter = require("../models/shelter")
 const {adminKeys} = require("../constants/adminKeys")
+const mongoose = require("mongoose")
 
 const searchAllPets = async (req, res) => {
     try {
