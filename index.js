@@ -17,3 +17,9 @@ app.use("/api", helloWorldRoutes)
 
 const petRoutes = require("./routes/pets")
 app.use("/api/pets", petRoutes)
+
+const shelterRoutes = require("./routes/shelters")
+app.use("/api/shelters",shelterRoutes)
+
+const breedRoutes = require("./routes/breeds")
+app.use("/api/breeds", breedRoutes)
