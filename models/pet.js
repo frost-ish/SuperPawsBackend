@@ -3,6 +3,7 @@ const mongoose = require("mongoose")
 const petSchema = new mongoose.Schema({
     name: String,
     shelterId: String,
+    gender: String,
     breed: {type: mongoose.Schema.Types.ObjectId, ref: 'Breed'},
     shelter: {type: mongoose.Schema.Types.ObjectId, ref: 'Shelter'},
     images: {type: [String]}

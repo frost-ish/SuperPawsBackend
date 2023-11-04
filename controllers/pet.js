@@ -24,8 +24,8 @@ const createPet = async (req, res) => {
         return
     }
 
-    if(req.body.shelterId == null || req.body.name == null || req.body.breed == null) {
-        res.status(400).json({"reason": "The Pet's shelter ID, name, or breed is missing"})
+    if(req.body.shelterId == null || req.body.name == null || req.body.breed == null || req.body.gender == null) {
+        res.status(400).json({"reason": "The Pet's shelter ID, name, gender or breed is missing"})
         return
     }
 
@@ -59,6 +59,7 @@ const createPet = async (req, res) => {
         name: req.body.name,
         breed: breed._id,
         shelter: shelter._id,
+        gender: req.body.gender,
         shelterId: req.body.shelterId
       })
 
