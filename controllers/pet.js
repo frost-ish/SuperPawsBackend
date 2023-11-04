@@ -1,6 +1,7 @@
 const Pet = require("../models/pet")
 const Breed = require("../models/breed")
 const Shelter = require("../models/shelter")
+const {adminKeys} = require("../constants/adminKeys")
 
 const searchAllPets = async (req, res) => {
     try {
@@ -60,7 +61,8 @@ const createPet = async (req, res) => {
         breed: breed._id,
         shelter: shelter._id,
         gender: req.body.gender,
-        shelterId: req.body.shelterId
+        shelterId: req.body.shelterId,
+        images: req.body.images
       })
 
       shelter.petCount++;
