@@ -13,6 +13,11 @@ const searchAllPets = async (req, res) => {
     }
 }
 
+const getAllPetsForApp = async (req, res) => {
+    const pets = await Pet.find({}).populate("shelter").populate("breed");
+    return res.json({"result": pets});
+} 
+
 const createPet = async (req, res) => {
 
     if(req.headers.authentication == null || !adminKeys.includes(req.headers.authentication)) {
@@ -73,4 +78,4 @@ const createPet = async (req, res) => {
 
 }
 
-module.exports = {searchAllPets, createPet}
+module.exports = {searchAllPets, createPet, getAllPetsForApp}
